@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throw</title>
+</head>
+<body>
+    <h1>FULL STACK JAVASCRIPT BOOTCAMP 2.0</h1>
+    <p>ANything Type Belows</p>
+    <input id="inp" type="text">
+    <button id="btn">Input here</button>
+    <p id="result"></p>
+
+    <script>
+        const val = document.getElementById("btn")
+        val.addEventListener("click", writvalue);
+        function writvalue(){
+            let msg = document.getElementById("result")
+            msg.innerHTML="";
+           let x= document.getElementById("inp").value
+           try{
+            if(x=="") throw "is empty";
+            if(isNaN(x)) throw "is not a number";
+            if(x>15) throw "is too high";
+            if(x<4) throw "is too low";
+           }
+             catch(err){
+            msg.innerHTML= "input "  + err;
+           }
+        }
+    </script>
+    
+</body>
+</html>
